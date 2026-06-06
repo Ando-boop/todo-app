@@ -3,9 +3,7 @@ import {type FormEvent, useState} from "react";
 import TodoItem from "./TodoItem.tsx";
 
 function TodoList() {
-
     const [todos, setTodos] = useState<Todo[]>([])
-
     const [text, setText] = useState<string>('')
 
     function handleSubmit(e: FormEvent) {
@@ -15,6 +13,13 @@ function TodoList() {
         const newTodo: Todo = {id: Date.now(), text: trimmed}
         setTodos([...todos, newTodo])
         setText('')
+    }
+
+    function handleUpdate(id: number, newText: string) {
+        setTodos(todos.map((todo) =>
+            todo.id === id ? {...todo, text: newText} : todo
+            )
+        )
     }
 
     function handleDelete(id: number) {
