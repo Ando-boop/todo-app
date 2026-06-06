@@ -2,9 +2,10 @@ import type { Todo } from '../types/todo'
 import { FiTrash2 } from 'react-icons/fi'
 import { MdOutlineEdit } from "react-icons/md";
 
-interface TodoItemProps {
+export interface TodoItemProps {
     todo: Todo
     onDelete: (id: number) => void
+    onUpdate: (id: number, tecoxt: string) => void
 }
 
 

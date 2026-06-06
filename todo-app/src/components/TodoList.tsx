@@ -1,8 +1,10 @@
 import type { Todo } from '../types/todo'
 import {type FormEvent, useState} from "react";
 import TodoItem from "./TodoItem.tsx";
+import TodoItemProps from "./TodoItem.tsx";
 
-function TodoList() {
+
+function TodoList({todo, onDelete, onUpdate} : TodoItermProps) {
     const [todos, setTodos] = useState<Todo[]>([])
     const [text, setText] = useState<string>('')
 
