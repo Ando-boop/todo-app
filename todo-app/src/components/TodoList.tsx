@@ -54,6 +54,9 @@ function TodoList() {
         setFolders([...folders, newFolder])
     }
 
+    const activeFolder = folders.find((folder) => folder.id === activeFolderId)
+    const visibleTodos = todos.filter((todo) => todo.folderId === activeFolderId)
+
     return (
         <>
             <button className="menu-btn" onClick={() => setIsDrawerOpen(true)}>
@@ -68,7 +71,8 @@ function TodoList() {
                 onAddFolder={handleAddFolder}
             />
 
-            <h1>My Todos</h1>
+
+            <h1>{activeFolder?.name}</h1>
             <hr />
             <form onSubmit={handleSubmit}>
                 <input
@@ -80,7 +84,7 @@ function TodoList() {
             </form>
 
             <ul>
-                {todos.map((todo: Todo) => (
+                {visibleTodos.map((todo: Todo) => (
                     <TodoItem
                         key={todo.id}
                         todo={todo}

@@ -1,17 +1,16 @@
 import type {FolderListProps} from "../types/FolderListProps.ts";
+import FolderItem from "./FolderItem.tsx";
 
 function FolderList({folders, activeFolderId, onSelectFolder}: FolderListProps) {
     return (
         <ul>
             {folders.map((folder) => (
-                <li
+                <FolderItem
                     key={folder.id}
-                    className={folder.id === activeFolderId ? 'folder active' : 'folder'}
-                    onClick={() => onSelectFolder(folder.id)}
-                >
-                    {folder.name}
-                    {folder.id === activeFolderId && ' ●'}
-                </li>
+                    folder={folder}
+                    isActive={folder.id === activeFolderId}
+                    onSelectFolder={onSelectFolder}
+                />
             ))}
         </ul>
     );

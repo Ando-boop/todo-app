@@ -1,8 +1,8 @@
-import type {Folder, Todo} from "./todo.ts";
+import type {Todo} from "./todo.ts";
 
 export interface TodoItemProps {
     todo: Todo,
-    onDelete: (id: number) => void,                                  
+    onDelete: (id: number) => void,
     onUpdate: (id: number, text: string) => void
 }
 

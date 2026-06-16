@@ -1,4 +1,4 @@
-import type {Folder, Todo} from "./todo.ts";
+import type {Folder} from "./todo.ts";
 
 export interface FolderDrawerProps {
     isOpen: boolean

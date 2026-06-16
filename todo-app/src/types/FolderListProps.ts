@@ -5,3 +5,5 @@ export interface FolderListProps {
     activeFolderId: number
     onSelectFolder: (id: number) => void
 }
+
+

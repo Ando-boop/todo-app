@@ -135,3 +135,15 @@ li {
   background: rgba(0, 0, 0, 0.3);
   z-index: 20;
 }
+
+.folder-add-btn {
+  align-items: center;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: #4281da;
+}
+
+.folder-add-btn:hover {
+  color: #154180;
+}
